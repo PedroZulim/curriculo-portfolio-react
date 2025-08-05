@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 function Curriculo1() {
   return (
     <div style={{ padding: "2rem" }}>
-      <h1>Pedro Zulim</h1>
-      <p><strong>Email:</strong> pedro@email.com</p>
+      <h1>Pedro</h1>
+      <p><strong>Email:</strong> pedro@gmail.com</p>
       <p><strong>Telefone:</strong> (99) 99999-9999</p>
 
       <h2>Resumo</h2>
@@ -17,7 +17,8 @@ function Curriculo1() {
       </ul>
 
       <h2>Formação</h2>
-      <p>Bacharelado em Ciência da Computação</p>
+      <p>Analise e Desenvolvimento de Sistemas</p>
+      <p>Pós-Graduação CodeMaster: Especialização avançada em Python</p>
 
       <Link to="/">← Voltar</Link>
     </div>
