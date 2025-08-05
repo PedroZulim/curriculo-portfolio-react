@@ -20,7 +20,7 @@ function Curriculo1() {
       <p>Analise e Desenvolvimento de Sistemas</p>
       <p>Pós-Graduação CodeMaster: Especialização avançada em Python</p>
 
-      <Link to="/">← Voltar</Link>
+      <Link to="/curriculo-portfolio-react/home">← Voltar</Link>
     </div>
   );
 }

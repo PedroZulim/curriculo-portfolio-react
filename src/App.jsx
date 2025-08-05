@@ -7,9 +7,9 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/PedroZulim" element={<Curriculo1 />} />
-        <Route path="/AnaJulia" element={<Curriculo2 />} />
+        <Route path="/curriculo-portfolio-react/home" element={<Home />} />
+        <Route path="/curriculo-portfolio-react/PedroZulim" element={<Curriculo1 />} />
+        <Route path="/curriculo-portfolio-react/AnaJulia" element={<Curriculo2 />} />
       </Routes>
     </BrowserRouter>
   );

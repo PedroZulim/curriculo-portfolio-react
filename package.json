@@ -1,6 +1,6 @@
 {
   "name": "curriculo-portfolio-react",
-  "homepage": "https://PedroZulim.github.io/",
+  "homepage": "https://PedroZulim.github.io/curriculo-portfolio-react/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
