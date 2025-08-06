@@ -20,7 +20,7 @@ function Curriculo1() {
         <h2>Formação</h2>
         <p>Bacharelado em Direito</p>
 
-        <Link to="/curriculo-portfolio-react/" className="back-link">← Voltar</Link>
+        <Link to="/" className="back-link">← Voltar</Link>
       </div>
     </div>
   );

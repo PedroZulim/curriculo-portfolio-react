@@ -7,9 +7,9 @@ function Home() {
       <div className="container">
         <h1>Currículos</h1>
         <p>Escolha qual currículo deseja visualizar:</p>
-        <ul style={{ listStyle: "none", padding: 0 }}>
-          <li><Link to="/curriculo-portfolio-react/PedroZulim">Currículo Pedro</Link></li>
-          <li><Link to="/curriculo-portfolio-react/AnaJulia">Currículo Ana Julia</Link></li>
+        <ul>
+          <li><Link to="/PedroZulim">Currículo Pedro</Link></li>
+          <li><Link to="/AnaJulia">Currículo Ana Julia</Link></li>
         </ul>
       </div>
     </div>

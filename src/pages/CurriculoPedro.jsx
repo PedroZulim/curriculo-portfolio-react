@@ -73,7 +73,7 @@ function Curriculo1() {
           <li>Disponível para Home Office, presenciais ou híbridas</li>
         </ul>
 
-        <Link to="/curriculo-portfolio-react/" className="back-link">← Voltar</Link>
+        <Link to="/" className="back-link">← Voltar</Link>
         </div>
     </div>
   );
