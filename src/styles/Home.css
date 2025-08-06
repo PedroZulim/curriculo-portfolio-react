@@ -8,20 +8,32 @@
   color: #333;
 }
 
-.home .container {
-  padding: 2rem;
-  max-width: 800px;
-  margin: 0 auto;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: url('../assets/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
   text-align: center;
 }
 
+.home .container {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+  max-width: 600px;
+  width: 90%;
+}
+
 .home h1 {
-  font-size: 2.5rem;
-  color: #2c3e50;
+  font-size: 3rem;
   margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .home h2 {
@@ -38,9 +50,33 @@
   margin-bottom: 0.5rem;
 }
 
+.home p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
 .home ul {
-  list-style-type: none;
-  padding-left: 0;
+  list-style: none;
+  padding: 0;
+}
+
+.home ul li {
+  margin: 2rem 0; /* Aumentei o espaçamento vertical entre os botões */
+}
+
+.home ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.home ul li a:hover {
+  background: #fff;
+  color: #3498db;
 }
 
 .home strong {
