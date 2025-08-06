@@ -8,11 +8,16 @@
   color: #333;
 }
 
+.curriculo-pedro{
+  background: url('../assets/background-pages.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
 .curriculo-pedro .container {
+  background: rgba(255, 255, 255, 0.7);
   padding: 2rem;
   max-width: 800px;
   margin: 0 auto;
-  background: #fff;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
