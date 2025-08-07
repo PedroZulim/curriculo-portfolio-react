@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "../styles/CurriculoAna.css";
+//import "../styles/CurriculoAna.css";
 
 function Curriculo1() {
   return (
