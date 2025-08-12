@@ -9,7 +9,7 @@ function Home() {
           <div class="inner">
             <h3 class="masthead-brand">Zulim's Tech</h3>
             <nav class="nav nav-masthead justify-content-center">
-              <a class="nav-link active" href="#">Home</a>
+              <a class="nav-link active" href="#/">Home</a>
               <a class="nav-link" href="#/PedroZulim">Pedro Zulim</a>
               <a class="nav-link" href="#/AnaJulia">Ana Julia</a>
             </nav>
