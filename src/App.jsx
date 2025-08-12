@@ -2,6 +2,7 @@ import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Curriculo1 from "./pages/CurriculoPedro";
 import Curriculo2 from "./pages/CurriculoAna";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
