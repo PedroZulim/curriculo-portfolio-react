@@ -23,10 +23,7 @@ function Home() {
             <a href="#" class="btn btn-lg btn-secondary">Learn more</a>
           </p>
         </main>
-
-        <footer class="mastfoot mt-auto">
-
-        </footer>
+        <footer class="mastfoot mt-auto"/>
       </div>
     </body>
   );
