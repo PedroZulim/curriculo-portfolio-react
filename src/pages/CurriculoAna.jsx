@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import "../styles/CurriculoBase.css";
 import "../styles/CurriculoAna.css";
 
 function CurriculoAna() {
@@ -17,9 +16,9 @@ function CurriculoAna() {
   ];
 
   return (
-    <main className="curriculo-page curriculo-ana-page">
+    <main className="curriculo-ana-page">
       <div className="curriculo-container">
-        <header className="hero-card ana-hero-card" aria-label="Resumo profissional de Ana Julia">
+        <header className="hero-card ana-hero-card">
           <div>
             <p className="hero-role">Estagiária de Direito</p>
             <h1>Ana Julia</h1>
@@ -28,14 +27,14 @@ function CurriculoAna() {
             </p>
           </div>
           <div className="hero-contact">
-            <p>✉️ E-mail profissional disponível sob solicitação</p>
-            <p>📞 Telefone profissional disponível sob solicitação</p>
+            <a href="mailto:anajulia@email.com">✉️ anajulia@email.com</a>
+            <a href="tel:+550000000000">📞 (00) 00000-0000</a>
             <p>📍 Londrina, PR</p>
             <p>⚖️ Disponível para estágio presencial, híbrido ou remoto</p>
           </div>
         </header>
 
-        <section className="content-grid" aria-label="Conteúdo do currículo de Ana Julia">
+        <section className="content-grid">
           <article className="content-card">
             <h2>Perfil profissional</h2>
             <p>
@@ -57,7 +56,9 @@ function CurriculoAna() {
                 Pesquisa de legislação, doutrina e jurisprudência para suporte
                 técnico.
               </li>
-              <li>Atendimento a clientes e organização de documentos processuais.</li>
+              <li>
+                Atendimento a clientes e organização de documentos processuais.
+              </li>
               <li>
                 Acompanhamento de prazos e movimentações processuais em múltiplas
                 áreas do Direito.
@@ -117,9 +118,6 @@ function CurriculoAna() {
         <div className="actions-row">
           <Link to="/" className="back-button ana-back-button">
             ← Voltar para a home
-          </Link>
-          <Link to="/PedroZulim" className="secondary-button">
-            Ver currículo do Pedro Zulim
           </Link>
         </div>
       </div>
