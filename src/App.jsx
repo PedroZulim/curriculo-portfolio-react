@@ -1,7 +1,7 @@
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import Curriculo1 from "./pages/CurriculoPedro";
-import Curriculo2 from "./pages/CurriculoAna";
+import CurriculoPedro from "./pages/CurriculoPedro";
+import CurriculoAna from "./pages/CurriculoAna";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
@@ -9,8 +9,8 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/PedroZulim" element={<Curriculo1 />} />
-        <Route path="/AnaJulia" element={<Curriculo2 />} />
+        <Route path="/PedroZulim" element={<CurriculoPedro />} />
+        <Route path="/AnaJulia" element={<CurriculoAna />} />
       </Routes>
     </Router>
   );

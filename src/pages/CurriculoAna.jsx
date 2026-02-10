@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "../styles/CurriculoAna.css";
 
-function Curriculo1() {
+function CurriculoAna() {
   return (
     <main className="ana-julia-page container py-4">
       {/* Cabeçalho */}
@@ -123,4 +123,4 @@ function Curriculo1() {
   );
 }
 
-export default Curriculo1;
+export default CurriculoAna;
