@@ -2,123 +2,125 @@ import { Link } from "react-router-dom";
 import "../styles/CurriculoAna.css";
 
 function CurriculoAna() {
+  const competencias = [
+    "Redação jurídica",
+    "Pesquisa jurisprudencial",
+    "Direito Trabalhista",
+    "Direito Previdenciário",
+    "Direito Civil",
+    "Direito de Família",
+    "Atendimento ao cliente",
+    "Organização processual",
+    "Pacote Office",
+    "Comunicação interpessoal",
+  ];
+
   return (
-    <main className="ana-julia-page container py-4">
-      {/* Cabeçalho */}
-      <section className="row g-4 align-items-center mb-4">
-        <div className="col-12 col-md-8">
-          <h1 className="display-6 mb-0">Ana Julia</h1>
-          <p className="text-body-secondary mb-2">Estagiária de Direito</p>
-          <div className="d-flex flex-wrap gap-2">
-            <a
-              href="mailto:anajulia@email.com"
-              className="btn btn-outline-primary btn-sm"
-            >
-              <i className="bi bi-envelope"></i> Email
-            </a>
-            <a
-              href="tel:+550000000000"
-              className="btn btn-outline-secondary btn-sm"
-            >
-              <i className="bi bi-telephone"></i> Telefone
-            </a>
-            <Link to="/" className="btn btn-light btn-sm">
-              ← Voltar
-            </Link>
+    <main className="curriculo-ana-page">
+      <div className="curriculo-container">
+        <header className="hero-card ana-hero-card">
+          <div>
+            <p className="hero-role">Estagiária de Direito</p>
+            <h1>Ana Julia</h1>
+            <p className="hero-subtitle">
+              Atuação em Direito Trabalhista, Previdenciário, Civil e de Família
+            </p>
           </div>
+          <div className="hero-contact">
+            <a href="mailto:anajulia@email.com">✉️ anajulia@email.com</a>
+            <a href="tel:+550000000000">📞 (00) 00000-0000</a>
+            <p>📍 Londrina, PR</p>
+            <p>⚖️ Disponível para estágio presencial, híbrido ou remoto</p>
+          </div>
+        </header>
+
+        <section className="content-grid">
+          <article className="content-card">
+            <h2>Perfil profissional</h2>
+            <p>
+              Estagiária em escritório de referência em Londrina, com experiência
+              em suporte jurídico, elaboração de peças processuais, pesquisas
+              legislativas e jurisprudenciais, além de atendimento a clientes.
+              Atua com organização, ética e foco em resultados para apoiar a
+              condução eficiente dos processos.
+            </p>
+          </article>
+
+          <article className="content-card">
+            <h2>Experiência profissional</h2>
+            <h3>Escritório de Advocacia — Londrina, PR</h3>
+            <p className="item-title">Estagiária de Direito (2023 — atual)</p>
+            <ul>
+              <li>Elaboração de petições, recursos e manifestações jurídicas.</li>
+              <li>
+                Pesquisa de legislação, doutrina e jurisprudência para suporte
+                técnico.
+              </li>
+              <li>
+                Atendimento a clientes e organização de documentos processuais.
+              </li>
+              <li>
+                Acompanhamento de prazos e movimentações processuais em múltiplas
+                áreas do Direito.
+              </li>
+            </ul>
+          </article>
+
+          <article className="content-card">
+            <h2>Formação acadêmica</h2>
+            <ul>
+              <li>
+                Bacharelado em Direito — Universidade Estadual de Londrina (em
+                andamento)
+              </li>
+            </ul>
+          </article>
+
+          <article className="content-card">
+            <h2>Áreas de atuação</h2>
+            <ul>
+              <li>Direito Trabalhista</li>
+              <li>Direito Previdenciário</li>
+              <li>Direito Civil</li>
+              <li>Direito de Família</li>
+            </ul>
+          </article>
+
+          <article className="content-card full-width">
+            <h2>Competências</h2>
+            <div className="skills-list">
+              {competencias.map((competencia) => (
+                <span key={competencia} className="skill-chip ana-skill-chip">
+                  {competencia}
+                </span>
+              ))}
+            </div>
+          </article>
+
+          <article className="content-card full-width">
+            <h2>Diferenciais</h2>
+            <ul>
+              <li>
+                Comunicação clara e empática no relacionamento com clientes e
+                equipe.
+              </li>
+              <li>
+                Organização para lidar com demandas simultâneas e cumprimento de
+                prazos.
+              </li>
+              <li>
+                Evolução contínua em técnica jurídica e atualização legislativa.
+              </li>
+            </ul>
+          </article>
+        </section>
+
+        <div className="actions-row">
+          <Link to="/" className="back-button ana-back-button">
+            ← Voltar para a home
+          </Link>
         </div>
-        <div className="col-12 col-md-4 text-md-end">
-          <span className="badge text-bg-dark me-2">Trabalhista</span>
-          <span className="badge text-bg-dark me-2">Previdenciário</span>
-          <span className="badge text-bg-dark me-2">Civil</span>
-          <span className="badge text-bg-dark">Família</span>
-        </div>
-      </section>
-
-      {/* Conteúdo */}
-      <section className="row g-4">
-        <div className="col-12 col-lg-8">
-          <div className="card shadow-sm">
-            <div className="card-body">
-              <h2 className="h5 card-title">Resumo</h2>
-              <p className="mb-3">
-                Estagiária em um dos escritórios mais reconhecidos de Londrina, atuando
-                nas áreas de Direito Trabalhista, Previdenciário, Civil e de Família.
-                Experiência no suporte jurídico, elaboração de peças processuais, pesquisas
-                e atendimento a clientes.
-              </p>
-            </div>
-          </div>
-          
-          {/* Formação */}
-          <div className="card shadow-sm mt-3">
-            <div className="card-body">
-              <h2 className="h5 card-title">Formação Acadêmica</h2>
-              <ul className="list-unstyled mb-0">
-                <li className="mb-2">
-                  <i className="bi bi-mortarboard"></i> Bacharelado em Direito — Universidade Estadual de Londrina (em andamento)
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Experiência */}
-          <div className="card shadow-sm mt-3">
-            <div className="card-body">
-              <h2 className="h5 card-title">Experiência Profissional</h2>
-              <ul className="list-group list-group-flush">
-                <li className="list-group-item">
-                  <div className="d-flex w-100 justify-content-between">
-                    <h3 className="h6 mb-1">Estagiária de Direito — Escritório de Advocacia X</h3>
-                    <small className="text-body-secondary">2023 — atual</small>
-                  </div>
-                  <p className="mb-1">
-                    Apoio na elaboração de petições, recursos e manifestações jurídicas.
-                    Realização de pesquisas legislativas e jurisprudenciais, atendimento
-                    ao cliente, organização documental e acompanhamento processual nas áreas:
-                    Trabalhista, Previdenciária, Civil e de Família.
-                  </p>
-                  <div className="small">
-                    <span className="badge text-bg-secondary me-1">Trabalhista</span>
-                    <span className="badge text-bg-secondary me-1">Previdenciário</span>
-                    <span className="badge text-bg-secondary me-1">Civil</span>
-                    <span className="badge text-bg-secondary">Família</span>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Competências */}
-          <div className="card shadow-sm mt-3">
-            <div className="card-body">
-              <h2 className="h5 card-title">Competências</h2>
-              <ul className="list-unstyled mb-0">
-                <li>• Redação jurídica clara e precisa</li>
-                <li>• Pesquisa legislativa e jurisprudencial</li>
-                <li>• Atendimento humanizado e profissional</li>
-                <li>• Organização de prazos e documentos processuais</li>
-                <li>• Conhecimento em Direito Trabalhista, Previdenciário, Civil e de Família</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        {/* Lateral */}
-        <aside className="col-12 col-lg-4">
-          <div className="card shadow-sm">
-            <div className="card-body">
-              <h2 className="h6 text-uppercase text-body-secondary">Áreas de Atuação</h2>
-              <ul className="list-group list-group-flush">
-                <li className="list-group-item">Direito Trabalhista</li>
-                <li className="list-group-item">Direito Previdenciário</li>
-                <li className="list-group-item">Direito Civil</li>
-                <li className="list-group-item">Direito de Família</li>
-              </ul>
-            </div>
-          </div>
-        </aside>
-      </section>
+      </div>
     </main>
   );
 }
