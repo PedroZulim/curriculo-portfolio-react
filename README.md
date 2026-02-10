@@ -1,12 +1,47 @@
-# React + Vite
+# Currículo Portfolio React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Portfólio em React + Vite publicado no GitHub Pages.
 
-Currently, two official plugins are available:
+## Deploy automático com GitHub Actions
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+O deploy é feito pelo workflow `.github/workflows/deploy.yml`.
 
-## Expanding the ESLint configuration
+### Como funciona
+A cada `push` na branch `main`, o GitHub Actions:
+1. Instala dependências com `npm ci`
+2. Gera o build com `npm run build`
+3. Publica o conteúdo de `dist` no GitHub Pages usando `actions/deploy-pages`
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+> Esse fluxo **não usa** `gh-pages -d dist`, então evita o erro:
+> `fatal: could not read Username for 'https://github.com'`.
+
+Também é possível publicar manualmente em **Actions → Deploy to GitHub Pages → Run workflow**.
+
+## Configuração inicial no GitHub (uma vez)
+No repositório do GitHub:
+1. Vá em **Settings → Pages**
+2. Em **Build and deployment**, selecione **Source: GitHub Actions**
+3. Salve
+
+Depois disso, cada push na `main` publica automaticamente.
+
+## Fluxo recomendado
+
+```bash
+# 1) validar local
+npm install
+npm run build
+
+# 2) publicar
+git add .
+git commit -m "feat: sua alteração"
+git push origin main
+```
+
+## Scripts disponíveis
+
+```bash
+npm run dev      # ambiente local
+npm run build    # build de produção
+npm run preview  # pré-visualização do build
+```
