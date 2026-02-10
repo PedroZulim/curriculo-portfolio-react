@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import "../styles/CurriculoBase.css";
 import "../styles/CurriculoPedro.css";
 
 function CurriculoPedro() {
@@ -20,9 +19,9 @@ function CurriculoPedro() {
   ];
 
   return (
-    <main className="curriculo-page curriculo-pedro-page">
+    <main className="curriculo-pedro-page">
       <div className="curriculo-container">
-        <header className="hero-card" aria-label="Resumo profissional de Pedro Zulim">
+        <header className="hero-card">
           <div>
             <p className="hero-role">Engenheiro de Dados</p>
             <h1>Pedro Henrique de Souza Zulim</h1>
@@ -43,7 +42,7 @@ function CurriculoPedro() {
           </div>
         </header>
 
-        <section className="content-grid" aria-label="Conteúdo do currículo de Pedro">
+        <section className="content-grid">
           <article className="content-card">
             <h2>Perfil profissional</h2>
             <p>
@@ -58,19 +57,12 @@ function CurriculoPedro() {
           <article className="content-card">
             <h2>Experiência profissional</h2>
             <h3>Tata Consultancy Services — Londrina, PR</h3>
-            <p className="item-title">
-              Engenheiro de Dados Júnior · Data Ingestion (2022 — 2025)
-            </p>
+            <p className="item-title">Engenheiro de Dados Júnior · Data Ingestion (2022 — 2025)</p>
             <ul>
               <li>Desenvolvimento e manutenção de pipelines ETL de alto desempenho.</li>
               <li>Normalização e padronização de dados em AWS Redshift.</li>
-              <li>
-                Automação de ingestão via Web Scraping e integração com sistemas
-                corporativos.
-              </li>
-              <li>
-                Utilização de Dagster, Sling e DLT para orquestração e carga de dados.
-              </li>
+              <li>Automação de ingestão via Web Scraping e integração com sistemas corporativos.</li>
+              <li>Utilização de Dagster, Sling e DLT para orquestração e carga de dados.</li>
             </ul>
             <p className="item-title">Estágio · Full Stack (2021 — 2022)</p>
             <ul>
@@ -81,13 +73,8 @@ function CurriculoPedro() {
           <article className="content-card">
             <h2>Formação acadêmica</h2>
             <ul>
-              <li>
-                Pós-graduação em Especialização Avançada em Python — UTFPR (2025)
-              </li>
-              <li>
-                Graduação em Análise e Desenvolvimento de Sistemas — UTFPR (2019 —
-                2025)
-              </li>
+              <li>Pós-graduação em Especialização Avançada em Python — UTFPR (2025)</li>
+              <li>Graduação em Análise e Desenvolvimento de Sistemas — UTFPR (2019 — 2025)</li>
             </ul>
           </article>
 
@@ -121,14 +108,16 @@ function CurriculoPedro() {
           <article className="content-card full-width">
             <h2>Diferenciais</h2>
             <ul>
-              <li>Visão estratégica para integração de IA em processos de dados.</li>
               <li>
-                Capacidade de resolver problemas complexos com soluções criativas e
-                custo-efetivas.
+                Visão estratégica para integração de IA em processos de dados.
               </li>
               <li>
-                Flexibilidade para atuar em múltiplas frentes de projetos, do
-                desenvolvimento à otimização.
+                Capacidade de resolver problemas complexos com soluções
+                criativas e custo-efetivas.
+              </li>
+              <li>
+                Flexibilidade para atuar em múltiplas frentes de projetos,
+                do desenvolvimento à otimização.
               </li>
             </ul>
           </article>
@@ -137,9 +126,6 @@ function CurriculoPedro() {
         <div className="actions-row">
           <Link to="/" className="back-button">
             ← Voltar para a home
-          </Link>
-          <Link to="/AnaJulia" className="secondary-button">
-            Ver currículo da Ana Julia
           </Link>
         </div>
       </div>

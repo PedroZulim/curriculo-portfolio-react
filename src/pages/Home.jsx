@@ -18,7 +18,7 @@ function Home() {
           <article className="profile-card">
             <h2>Pedro Henrique Zulim</h2>
             <p>Engenheiro de Dados | Especialista em ETL, Python e AWS.</p>
-            <Link to="/PedroZulim" className="profile-link" aria-label="Ver currículo de Pedro Henrique Zulim">
+            <Link to="/PedroZulim" className="profile-link">
               Ver currículo
             </Link>
           </article>
@@ -29,7 +29,7 @@ function Home() {
               Estagiária de Direito com atuação em áreas Trabalhista,
               Previdenciária, Civil e Família.
             </p>
-            <Link to="/AnaJulia" className="profile-link" aria-label="Ver currículo de Ana Julia">
+            <Link to="/AnaJulia" className="profile-link">
               Ver currículo
             </Link>
           </article>
