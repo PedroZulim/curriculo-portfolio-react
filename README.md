@@ -1,12 +1,44 @@
-# React + Vite
+# Currículo Portfolio React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Portfólio em React + Vite publicado no GitHub Pages.
 
-Currently, two official plugins are available:
+## Deploy automático com GitHub Actions
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Este repositório agora possui workflow em `.github/workflows/deploy.yml` para publicar automaticamente no GitHub Pages.
 
-## Expanding the ESLint configuration
+### Como funciona
+- A cada `push` na branch `main`, o GitHub Actions:
+  1. Instala dependências (`npm ci`)
+  2. Gera build (`npm run build`)
+  3. Publica a pasta `dist` no GitHub Pages
+- Também é possível rodar manualmente em **Actions → Deploy to GitHub Pages → Run workflow**.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Configuração inicial no GitHub (uma vez)
+No repositório do GitHub:
+1. Vá em **Settings → Pages**
+2. Em **Build and deployment**, selecione **Source: GitHub Actions**
+3. Salve
+
+Pronto: depois disso, cada merge/push na `main` publica automaticamente.
+
+## Fluxo recomendado
+
+```bash
+# 1) desenvolver e validar localmente
+npm install
+npm run build
+
+# 2) commit e push
+git add .
+git commit -m "feat: sua alteração"
+git push origin main
+```
+
+## Scripts disponíveis
+
+```bash
+npm run dev      # ambiente local
+npm run build    # build de produção
+npm run preview  # pré-visualização do build
+npm run deploy   # deploy manual (legado, opcional)
+```
