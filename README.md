@@ -44,4 +44,5 @@ git push origin main
 npm run dev      # ambiente local
 npm run build    # build de produção
 npm run preview  # pré-visualização do build
+npm run deploy   # alias para build (evita erro de script ausente)
 ```
