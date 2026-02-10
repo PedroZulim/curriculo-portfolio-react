@@ -16,7 +16,7 @@ function Home() {
 
         <section className="profile-grid" aria-label="Perfis disponíveis">
           <article className="profile-card">
-            <h2>Pedro Henrique Zulim</h2>
+            <h2>Pedro Henrique de Souza Zulim</h2>
             <p>Engenheiro de Dados | Especialista em ETL, Python e AWS.</p>
             <Link to="/PedroZulim" className="profile-link">
               Ver currículo
