@@ -1,78 +1,29 @@
 .curriculo-pedro-page {
-  min-height: 100vh;
   background: #eef2ff;
-  padding: 1.5rem 1rem 2.5rem;
-}
-
-.curriculo-container {
-  width: min(1100px, 100%);
-  margin: 0 auto;
 }
 
 .hero-card {
-  border-radius: 18px;
   background: linear-gradient(135deg, #1d4ed8, #0f172a);
   color: #f9fafb;
-  padding: clamp(1.2rem, 3vw, 2rem);
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: 2fr 1fr;
 }
 
 .hero-role {
-  margin: 0;
   color: #bfdbfe;
-  font-weight: 600;
-}
-
-.hero-card h1 {
-  margin: 0.3rem 0;
-  font-size: clamp(1.4rem, 3vw, 2.2rem);
-}
-
-.hero-subtitle {
-  margin: 0;
-}
-
-.hero-contact {
-  display: grid;
-  align-content: start;
-  gap: 0.45rem;
-  font-size: 0.95rem;
 }
 
 .hero-contact a,
 .hero-contact p {
   color: #e5e7eb;
-  margin: 0;
-  text-decoration: none;
-}
-
-.content-grid {
-  margin-top: 1.2rem;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 1rem;
 }
 
 .content-card {
-  grid-column: span 6;
   background: #fff;
   border: 1px solid #dbeafe;
-  border-radius: 14px;
-  padding: 1rem 1.05rem;
   box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
 }
 
 .content-card h2 {
-  margin: 0 0 0.7rem;
   color: #1d4ed8;
-  font-size: 1.2rem;
-}
-
-.content-card h3 {
-  margin: 0 0 0.4rem;
-  font-size: 1rem;
 }
 
 .content-card p,
@@ -80,59 +31,16 @@
   color: #1f2937;
 }
 
-.content-card ul {
-  margin: 0;
-  padding-left: 1.1rem;
-}
-
-.item-title {
-  margin: 0.7rem 0 0.3rem;
-  font-weight: 600;
-}
-
-.full-width {
-  grid-column: 1 / -1;
-}
-
-.skills-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
 .skill-chip {
   background: #dbeafe;
-  border: 1px solid #93c5fd;
+  border-color: #93c5fd;
   color: #1e3a8a;
-  font-weight: 600;
-  padding: 0.35rem 0.65rem;
-  border-radius: 999px;
-  font-size: 0.88rem;
-}
-
-.actions-row {
-  margin-top: 1.2rem;
 }
 
 .back-button {
-  text-decoration: none;
   background: #1d4ed8;
-  color: #fff;
-  font-weight: 600;
-  border-radius: 10px;
-  padding: 0.6rem 0.9rem;
 }
 
 .back-button:hover {
   background: #1e40af;
-}
-
-@media (max-width: 900px) {
-  .hero-card {
-    grid-template-columns: 1fr;
-  }
-
-  .content-card {
-    grid-column: 1 / -1;
-  }
 }
