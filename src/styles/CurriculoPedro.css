@@ -1,6 +1,6 @@
 .curriculo-pedro-page {
   min-height: 100vh;
-  background: #eef2ff;
+  background: #f0fdf4;
   padding: 1.5rem 1rem 2.5rem;
 }
 
@@ -11,7 +11,7 @@
 
 .curriculo-pedro-page .hero-card {
   border-radius: 18px;
-  background: linear-gradient(135deg, #1d4ed8, #0f172a);
+  background: linear-gradient(135deg, #15803d, #052e16);
   color: #f9fafb;
   padding: clamp(1.2rem, 3vw, 2rem);
   display: grid;
@@ -21,7 +21,7 @@
 
 .curriculo-pedro-page .hero-role {
   margin: 0;
-  color: #bfdbfe;
+  color: #bbf7d0;
   font-weight: 600;
 }
 
@@ -58,7 +58,7 @@
 .curriculo-pedro-page .content-card {
   grid-column: span 6;
   background: #fff;
-  border: 1px solid #dbeafe;
+  border: 1px solid #dcfce7;
   border-radius: 14px;
   padding: 1rem 1.05rem;
   box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
@@ -66,7 +66,7 @@
 
 .curriculo-pedro-page .content-card h2 {
   margin: 0 0 0.7rem;
-  color: #1d4ed8;
+  color: #15803d;
   font-size: 1.2rem;
 }
 
@@ -101,9 +101,9 @@
 }
 
 .curriculo-pedro-page .skill-chip {
-  background: #dbeafe;
-  border: 1px solid #93c5fd;
-  color: #1e3a8a;
+  background: #dcfce7;
+  border: 1px solid #86efac;
+  color: #14532d;
   font-weight: 600;
   padding: 0.35rem 0.65rem;
   border-radius: 999px;
@@ -116,7 +116,7 @@
 
 .curriculo-pedro-page .back-button {
   text-decoration: none;
-  background: #1d4ed8;
+  background: #15803d;
   color: #fff;
   font-weight: 600;
   border-radius: 10px;
@@ -124,7 +124,7 @@
 }
 
 .curriculo-pedro-page .back-button:hover {
-  background: #1e40af;
+  background: #166534;
 }
 
 @media (max-width: 900px) {
