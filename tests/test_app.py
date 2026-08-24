@@ -1,8 +1,13 @@
 from app import create_app
+from wsgi import app as wsgi_app
 
 
 def test_create_app():
     assert create_app() is not None
+
+
+def test_wsgi_entrypoint():
+    assert wsgi_app is not None
 
 
 def test_404_uses_custom_page(client):
