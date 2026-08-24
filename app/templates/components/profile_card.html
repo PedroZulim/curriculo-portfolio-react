@@ -1,0 +1,5 @@
+<article class="profile-card">
+  <h2>{{ perfil.nome }}</h2>
+  <p>{{ perfil.descricao_home }}</p>
+  <a href="{{ url_for('main.' ~ perfil.tema) }}" class="profile-link">Ver currículo</a>
+</article>

@@ -1,0 +1,7 @@
+{% for experiencia in perfil.experiencias %}
+  <h3>{{ experiencia.empresa }}</h3>
+  {% for cargo in experiencia.cargos %}
+    <p class="item-title">{{ cargo.titulo }}</p>
+    <ul>{% for item in cargo.itens %}<li>{{ item }}</li>{% endfor %}</ul>
+  {% endfor %}
+{% endfor %}

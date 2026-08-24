@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Portfólio Profissional | Zulim's Tech{% endblock %}
+{% block styles %}<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">{% endblock %}
+{% block content %}
+<main class="home-page">
+  <div class="home-overlay">
+    <header class="home-header">
+      <p class="home-brand">Zulim's Tech</p>
+      <h1>Portfólio Profissional</h1>
+      <p class="home-subtitle">Escolha um currículo para visualizar os detalhes de experiência, competências e formação.</p>
+    </header>
+    <section class="profile-grid" aria-label="Perfis disponíveis">
+      {% for perfil in perfis %}{% include "components/profile_card.html" %}{% endfor %}
+    </section>
+  </div>
+</main>
+{% endblock %}

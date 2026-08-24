@@ -1,0 +1,20 @@
+ANA = {
+    "slug": "AnaJulia",
+    "tema": "ana",
+    "nome": "Ana Julia",
+    "cargo": "Estagiária de Direito",
+    "resumo": "Atuação em Direito Trabalhista, Previdenciário, Civil e de Família",
+    "descricao_home": "Estagiária de Direito com atuação em áreas Trabalhista, Previdenciária, Civil e Família.",
+    "contatos": [
+        {"icone": "✉️", "texto": "anajulia@email.com", "href": "mailto:anajulia@email.com"},
+        {"icone": "📞", "texto": "(00) 00000-0000", "href": "tel:+550000000000"},
+        {"icone": "📍", "texto": "Londrina, PR"},
+        {"icone": "⚖️", "texto": "Disponível para estágio presencial, híbrido ou remoto"},
+    ],
+    "perfil": "Estagiária em escritório de referência em Londrina, com experiência em suporte jurídico, elaboração de peças processuais, pesquisas legislativas e jurisprudenciais, além de atendimento a clientes. Atua com organização, ética e foco em resultados para apoiar a condução eficiente dos processos.",
+    "experiencias": [{"empresa": "Escritório de Advocacia — Londrina, PR", "cargos": [{"titulo": "Estagiária de Direito (2023 — atual)", "itens": ["Elaboração de petições, recursos e manifestações jurídicas.", "Pesquisa de legislação, doutrina e jurisprudência para suporte técnico.", "Atendimento a clientes e organização de documentos processuais.", "Acompanhamento de prazos e movimentações processuais em múltiplas áreas do Direito."]}]}],
+    "formacao": ["Bacharelado em Direito — Universidade Estadual de Londrina (em andamento)"],
+    "secao_extra": {"titulo": "Áreas de atuação", "itens": ["Direito Trabalhista", "Direito Previdenciário", "Direito Civil", "Direito de Família"]},
+    "competencias": ["Redação jurídica", "Pesquisa jurisprudencial", "Direito Trabalhista", "Direito Previdenciário", "Direito Civil", "Direito de Família", "Atendimento ao cliente", "Organização processual", "Pacote Office", "Comunicação interpessoal"],
+    "diferenciais": ["Comunicação clara e empática no relacionamento com clientes e equipe.", "Organização para lidar com demandas simultâneas e cumprimento de prazos.", "Evolução contínua em técnica jurídica e atualização legislativa."],
+}

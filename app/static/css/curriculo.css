@@ -1,0 +1,24 @@
+.curriculo-page { min-height:100vh; padding:1.5rem 1rem 2.5rem; --accent:#1d4ed8; --accent-dark:#1e40af; --accent-light:#dbeafe; --border:#93c5fd; --page:#eef2ff; --hero:#0f172a; background:var(--page); }
+.curriculo-page.tema-ana { --accent:#be185d; --accent-dark:#9d174d; --accent-light:#fce7f3; --border:#f9a8d4; --page:#fdf2f8; --hero:#7e22ce; }
+.curriculo-container { width:min(1100px,100%); margin:0 auto; }
+.hero-card { border-radius:18px; background:linear-gradient(135deg,var(--accent),var(--hero)); color:#f9fafb; padding:clamp(1.2rem,3vw,2rem); display:grid; gap:1rem; grid-template-columns:2fr 1fr; }
+.hero-role { margin:0; color:var(--accent-light); font-weight:600; }
+.hero-card h1 { margin:.3rem 0; font-size:clamp(1.4rem,3vw,2.2rem); }
+.hero-subtitle { margin:0; }
+.hero-contact { display:grid; align-content:start; gap:.45rem; font-size:.95rem; }
+.hero-contact a,.hero-contact p { color:#f9fafb; margin:0; text-decoration:none; }
+.hero-contact a:hover { text-decoration:underline; }
+.content-grid { margin-top:1.2rem; display:grid; grid-template-columns:repeat(12,1fr); gap:1rem; }
+.content-card { grid-column:span 6; background:#fff; border:1px solid var(--accent-light); border-radius:14px; padding:1rem 1.05rem; box-shadow:0 6px 18px rgba(15,23,42,.07); }
+.content-card h2 { margin:0 0 .7rem; color:var(--accent); font-size:1.2rem; }
+.content-card h3 { margin:0 0 .4rem; font-size:1rem; }
+.content-card p,.content-card li { color:#1f2937; }
+.content-card ul { margin:0; padding-left:1.1rem; }
+.item-title { margin:.7rem 0 .3rem; font-weight:600; }
+.full-width { grid-column:1/-1; }
+.skills-list { display:flex; flex-wrap:wrap; gap:.5rem; }
+.skill-chip { background:var(--accent-light); border:1px solid var(--border); color:var(--accent-dark); font-weight:600; padding:.35rem .65rem; border-radius:999px; font-size:.88rem; }
+.actions-row { margin-top:1.2rem; }
+.back-button { display:inline-block; text-decoration:none; background:var(--accent); color:#fff; font-weight:600; border-radius:10px; padding:.6rem .9rem; }
+.back-button:hover,.back-button:focus-visible { background:var(--accent-dark); }
+@media (max-width:900px) { .hero-card { grid-template-columns:1fr; } .content-card { grid-column:1/-1; } }

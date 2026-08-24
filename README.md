@@ -1,48 +1,50 @@
-# Currículo Portfolio React
+# Currículo Portfolio
 
-Portfólio em React + Vite publicado no GitHub Pages.
+Aplicação web de portfólio desenvolvida em Python e Flask, com renderização server-side por Jinja2, arquitetura modular, testes automatizados e deploy preparado para o Render.
 
-## Deploy automático com GitHub Actions
+## Rotas
 
-O deploy é feito pelo workflow `.github/workflows/deploy.yml`.
+- `/` — página inicial
+- `/PedroZulim` — currículo de Pedro
+- `/AnaJulia` — currículo de Ana
+- `/health` — verificação de saúde em JSON
 
-### Como funciona
-A cada `push` na branch `main`, o GitHub Actions:
-1. Instala dependências com `npm ci`
-2. Gera o build com `npm run build`
-3. Publica o conteúdo de `dist` no GitHub Pages usando `actions/deploy-pages`
+## Desenvolvimento local
 
-> Esse fluxo **não usa** `gh-pages -d dist`, então evita o erro:
-> `fatal: could not read Username for 'https://github.com'`.
-
-Também é possível publicar manualmente em **Actions → Deploy to GitHub Pages → Run workflow**.
-
-## Configuração inicial no GitHub (uma vez)
-No repositório do GitHub:
-1. Vá em **Settings → Pages**
-2. Em **Build and deployment**, selecione **Source: GitHub Actions**
-3. Salve
-
-Depois disso, cada push na `main` publica automaticamente.
-
-## Fluxo recomendado
+Requer Python 3.12.
 
 ```bash
-# 1) validar local
-npm install
-npm run build
-
-# 2) publicar
-git add .
-git commit -m "feat: sua alteração"
-git push origin main
+python -m venv .venv
+pip install -r requirements-dev.txt
+flask --app app run --debug
 ```
 
-## Scripts disponíveis
+Antes de enviar alterações:
 
 ```bash
-npm run dev      # ambiente local
-npm run build    # build de produção
-npm run preview  # pré-visualização do build
-npm run deploy   # alias para build (evita erro de script ausente)
+ruff check .
+pytest
 ```
+
+## Arquitetura
+
+O padrão Application Factory fica em `app/__init__.py`, as rotas em `app/routes.py`, os dados dos currículos em `app/data`, os templates Jinja2 em `app/templates` e os arquivos visuais em `app/static`.
+
+## CI/CD
+
+Pull Requests e atualizações da `main` executam o job obrigatório `quality` no GitHub Actions. Ele valida Ruff, pytest e a inicialização da aplicação. A `main` representa produção.
+
+```text
+Pull Request → GitHub Actions → Ruff + pytest + startup check → main → Render
+```
+
+## Deploy
+
+O Blueprint `render.yaml` configura o serviço no Render com:
+
+- build: `pip install -r requirements.txt`;
+- start: `gunicorn app:app`;
+- health check: `/health`;
+- auto deploy somente depois que os checks passam.
+
+Os segredos de produção devem ser configurados no ambiente do Render e nunca versionados.

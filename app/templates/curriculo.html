@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}{{ perfil.nome }} | Zulim's Tech{% endblock %}
+{% block styles %}<link rel="stylesheet" href="{{ url_for('static', filename='css/curriculo.css') }}">{% endblock %}
+{% block content %}
+<main class="curriculo-page tema-{{ perfil.tema }}">
+  <div class="curriculo-container">
+    <header class="hero-card">
+      <div><p class="hero-role">{{ perfil.cargo }}</p><h1>{{ perfil.nome }}</h1><p class="hero-subtitle">{{ perfil.resumo }}</p></div>
+      <div class="hero-contact">
+        {% for contato in perfil.contatos %}
+          {% if contato.href %}<a href="{{ contato.href }}"{% if contato.externo %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ contato.icone }} {{ contato.texto }}</a>{% else %}<p>{{ contato.icone }} {{ contato.texto }}</p>{% endif %}
+        {% endfor %}
+      </div>
+    </header>
+    <section class="content-grid">
+      <article class="content-card"><h2>Perfil profissional</h2><p>{{ perfil.perfil }}</p></article>
+      <article class="content-card"><h2>Experiência profissional</h2>{% include "components/experience.html" %}</article>
+      <article class="content-card"><h2>Formação acadêmica</h2><ul>{% for item in perfil.formacao %}<li>{{ item }}</li>{% endfor %}</ul></article>
+      <article class="content-card"><h2>{{ perfil.secao_extra.titulo }}</h2><ul>{% for item in perfil.secao_extra.itens %}<li>{{ item }}</li>{% endfor %}</ul></article>
+      <article class="content-card full-width"><h2>Competências{% if perfil.tema == 'pedro' %} técnicas{% endif %}</h2><div class="skills-list">{% for item in perfil.competencias %}<span class="skill-chip">{{ item }}</span>{% endfor %}</div></article>
+      <article class="content-card full-width"><h2>Diferenciais</h2><ul>{% for item in perfil.diferenciais %}<li>{{ item }}</li>{% endfor %}</ul></article>
+    </section>
+    <div class="actions-row"><a href="{{ url_for('main.home') }}" class="back-button">← Voltar para a home</a></div>
+  </div>
+</main>
+{% endblock %}
