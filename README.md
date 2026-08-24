@@ -43,7 +43,7 @@ Pull Request → GitHub Actions → Ruff + pytest + startup check → main → R
 O Blueprint `render.yaml` configura o serviço no Render com:
 
 - build: `pip install -r requirements.txt`;
-- start: `gunicorn app:app`;
+- start: `gunicorn wsgi:app`;
 - health check: `/health`;
 - auto deploy somente depois que os checks passam.
 

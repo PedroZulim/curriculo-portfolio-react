@@ -28,4 +28,4 @@ jobs:
       - name: Tests
         run: pytest
       - name: Flask startup check
-        run: python -c "from app import create_app; create_app()"
+        run: python -c "from wsgi import app; assert app"
