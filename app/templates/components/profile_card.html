@@ -1,5 +1,8 @@
-<article class="profile-card">
-  <h2>{{ perfil.nome }}</h2>
-  <p>{{ perfil.descricao_home }}</p>
-  <a href="{{ url_for('main.' ~ perfil.tema) }}" class="profile-link">Ver currículo</a>
+<article class="profile-card profile-{{ perfil.tema }}">
+  <div class="profile-top"><span class="profile-index">{{ '01' if perfil.tema == 'pedro' else '02' }}</span><span class="profile-status"><i></i> Perfil disponível</span></div>
+  <div class="profile-avatar" aria-hidden="true">{{ perfil.iniciais|default(perfil.nome[:2]|upper) }}<span>.</span></div>
+  <p class="profile-role">{{ perfil.cargo }}</p>
+  <h3>{{ perfil.nome_curto|default(perfil.nome) }}</h3>
+  <p class="profile-description">{{ perfil.descricao_home }}</p>
+  <div class="profile-footer"><span>Ver trajetória completa</span><a href="{{ url_for('main.' ~ perfil.tema) }}" class="profile-link" aria-label="Ver currículo de {{ perfil.nome }}">↗</a></div>
 </article>

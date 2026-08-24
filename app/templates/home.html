@@ -3,15 +3,30 @@
 {% block styles %}<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">{% endblock %}
 {% block content %}
 <main class="home-page">
-  <div class="home-overlay">
-    <header class="home-header">
-      <p class="home-brand">Zulim's Tech</p>
-      <h1>Portfólio Profissional</h1>
-      <p class="home-subtitle">Escolha um currículo para visualizar os detalhes de experiência, competências e formação.</p>
+  <div class="home-grid" aria-hidden="true"></div>
+  <div class="home-shell">
+    <nav class="home-nav" aria-label="Navegação principal">
+      <a class="home-logo" href="{{ url_for('main.home') }}">ZT<span>.</span></a>
+      <div class="home-nav-copy"><span>Portfólios</span><i></i><span>Londrina, PR</span></div>
+    </nav>
+    <header class="home-hero">
+      <div class="home-copy">
+        <p class="home-eyebrow"><span></span> Portfólio profissional</p>
+        <h1>Talento, tecnologia<br>e <em>boas histórias.</em></h1>
+        <p class="home-subtitle">Conheça as experiências, competências e trajetórias profissionais que fazem parte da Zulim's Tech.</p>
+        <a class="home-cta" href="#perfis">Explorar perfis <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="home-visual" aria-hidden="true">
+        <div class="visual-ring ring-one"></div><div class="visual-ring ring-two"></div>
+        <div class="visual-center"><span>ZT</span><small>portfolio</small></div>
+        <div class="visual-chip chip-one">DATA</div><div class="visual-chip chip-two">LAW</div><div class="visual-chip chip-three">TECH</div>
+      </div>
     </header>
-    <section class="profile-grid" aria-label="Perfis disponíveis">
-      {% for perfil in perfis %}{% include "components/profile_card.html" %}{% endfor %}
+    <section class="profiles-section" id="perfis" aria-labelledby="profiles-title">
+      <div class="profiles-heading"><div><p class="home-eyebrow"><span></span> Selecione um perfil</p><h2 id="profiles-title">Trajetórias em destaque</h2></div><p>02 profissionais</p></div>
+      <div class="profile-grid">{% for perfil in perfis %}{% include "components/profile_card.html" %}{% endfor %}</div>
     </section>
+    <footer class="home-footer"><a class="home-logo" href="#">ZT<span>.</span></a><p>Construindo caminhos. Entregando valor.</p><p>© 2026 Zulim's Tech</p></footer>
   </div>
 </main>
 {% endblock %}

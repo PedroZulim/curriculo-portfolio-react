@@ -1,26 +1,30 @@
 {% extends "base.html" %}
-{% block title %}{{ perfil.nome }} | Zulim's Tech{% endblock %}
+{% block title %}{{ perfil.nome }} | Portfólio{% endblock %}
 {% block styles %}<link rel="stylesheet" href="{{ url_for('static', filename='css/curriculo.css') }}">{% endblock %}
 {% block content %}
-<main class="curriculo-page tema-{{ perfil.tema }}">
-  <div class="curriculo-container">
-    <header class="hero-card">
-      <div><p class="hero-role">{{ perfil.cargo }}</p><h1>{{ perfil.nome }}</h1><p class="hero-subtitle">{{ perfil.resumo }}</p></div>
-      <div class="hero-contact">
-        {% for contato in perfil.contatos %}
-          {% if contato.href %}<a href="{{ contato.href }}"{% if contato.externo %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ contato.icone }} {{ contato.texto }}</a>{% else %}<p>{{ contato.icone }} {{ contato.texto }}</p>{% endif %}
-        {% endfor %}
-      </div>
+<main class="portfolio tema-{{ perfil.tema }}" id="inicio">
+  <div class="ambient-grid" aria-hidden="true"></div>
+  <div class="portfolio-shell">
+    <nav class="topbar" aria-label="Navegação principal">
+      <a class="monogram" href="#inicio" aria-label="Ir ao início">{{ perfil.iniciais|default('CV') }}<span>.</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="portfolio-menu"><span></span><span></span><span></span><span class="sr-only">Abrir menu</span></button>
+      <div class="topbar-links" id="portfolio-menu"><a href="#sobre">Sobre</a><a href="#experiencia">Experiência</a><a href="#projetos">Projetos</a><a href="#skills">Skills</a><a href="#contato">Contato</a></div>
+    </nav>
+    <header class="hero">
+      <div class="hero-copy"><p class="eyebrow">Olá, eu sou</p><h1>{{ perfil.nome_curto|default(perfil.nome) }}</h1><p class="hero-role">{{ perfil.cargo }}</p><p class="hero-headline">{{ perfil.headline|default(perfil.resumo) }}</p><p class="hero-summary">{{ perfil.resumo }}</p><div class="hero-actions"><a class="button button-primary" href="#experiencia">Ver experiência <span aria-hidden="true">↓</span></a>{% if perfil.linkedin %}<a class="button button-ghost" href="{{ perfil.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>{% endif %}</div></div>
+      <div class="data-visual" aria-hidden="true"><div class="visual-orbit orbit-one"></div><div class="visual-orbit orbit-two"></div><div class="data-node node-a"><span></span><span></span><span></span></div><div class="data-node node-b"><span></span><span></span></div><div class="data-core">{ }</div><div class="chart-card"><i style="--h:38%"></i><i style="--h:60%"></i><i style="--h:82%"></i><i style="--h:54%"></i><i style="--h:92%"></i></div></div>
     </header>
-    <section class="content-grid">
-      <article class="content-card"><h2>Perfil profissional</h2><p>{{ perfil.perfil }}</p></article>
-      <article class="content-card"><h2>Experiência profissional</h2>{% include "components/experience.html" %}</article>
-      <article class="content-card"><h2>Formação acadêmica</h2><ul>{% for item in perfil.formacao %}<li>{{ item }}</li>{% endfor %}</ul></article>
-      <article class="content-card"><h2>{{ perfil.secao_extra.titulo }}</h2><ul>{% for item in perfil.secao_extra.itens %}<li>{{ item }}</li>{% endfor %}</ul></article>
-      <article class="content-card full-width"><h2>Competências{% if perfil.tema == 'pedro' %} técnicas{% endif %}</h2><div class="skills-list">{% for item in perfil.competencias %}<span class="skill-chip">{{ item }}</span>{% endfor %}</div></article>
-      <article class="content-card full-width"><h2>Diferenciais</h2><ul>{% for item in perfil.diferenciais %}<li>{{ item }}</li>{% endfor %}</ul></article>
+    <div class="quick-stack" aria-label="Tecnologias em destaque">{% for item in perfil.destaques %}<span>{{ item }}</span>{% endfor %}</div>
+    <section class="panel about-panel" id="sobre"><div class="section-icon" aria-hidden="true">01</div><div><p class="section-kicker">Sobre</p><h2>Dados confiáveis. Decisões melhores.</h2><p>{{ perfil.perfil }}</p><p class="objective"><strong>Objetivo:</strong> {{ perfil.objetivo }}</p></div></section>
+    <section class="panel section-block" id="experiencia">
+      <div class="section-heading"><div><p class="section-kicker">Trajetória</p><h2>Experiência profissional</h2></div><span>{{ perfil.experiencias|length }} empresas</span></div>
+      <div class="timeline">{% for experiencia in perfil.experiencias %}{% for cargo in experiencia.cargos %}<article class="timeline-entry"><div class="timeline-meta"><p>{{ cargo.periodo|default('') }}</p><span>{{ experiencia.local|default('') }}</span></div><div class="timeline-dot"></div><div class="experience-card"><div class="experience-top"><div><h3>{{ cargo.titulo }}</h3><p>{{ experiencia.empresa }}</p></div><span>{{ cargo.projeto|default('') }}</span></div><ul>{% for item in cargo.itens %}<li>{{ item }}</li>{% endfor %}</ul></div></article>{% endfor %}{% endfor %}</div>
     </section>
-    <div class="actions-row"><a href="{{ url_for('main.home') }}" class="back-button">← Voltar para a home</a></div>
+    {% if perfil.projetos %}<section class="panel section-block" id="projetos"><div class="section-heading"><div><p class="section-kicker">Cases</p><h2>Projetos em destaque</h2></div></div><div class="project-grid">{% for projeto in perfil.projetos %}<article class="project-card"><div class="project-number">0{{ loop.index }}</div><h3>{{ projeto.titulo }}</h3><p>{{ projeto.descricao }}</p><div class="tag-list">{% for tag in projeto.tags %}<span>{{ tag }}</span>{% endfor %}</div></article>{% endfor %}</div></section>{% endif %}
+    {% if perfil.stack %}<section class="panel section-block" id="skills"><div class="section-heading"><div><p class="section-kicker">Toolkit</p><h2>Stack técnica</h2></div></div><div class="stack-grid">{% for categoria, itens in perfil.stack.items() %}<article class="stack-group"><h3>{{ categoria }}</h3><div>{% for item in itens %}<span>{{ item }}</span>{% endfor %}</div></article>{% endfor %}</div></section>{% endif %}
+    <section class="details-grid"><article class="panel detail-card"><p class="section-kicker">Formação</p><h2>Base acadêmica</h2>{% for item in perfil.formacao %}{% if item is mapping %}<div class="education-item"><strong>{{ item.curso }}</strong><span>{{ item.instituicao }} · {{ item.periodo }}</span></div>{% else %}<div class="education-item"><strong>{{ item }}</strong></div>{% endif %}{% endfor %}</article><article class="panel detail-card"><p class="section-kicker">Desenvolvimento</p><h2>Cursos e certificações</h2><div class="tag-list large">{% if perfil.certificacoes is defined %}{% for item in perfil.certificacoes %}<span>{{ item }}</span>{% endfor %}{% else %}{% for item in perfil.secao_extra.itens %}<span>{{ item }}</span>{% endfor %}{% endif %}</div></article></section>
+    <section class="contact-card" id="contato"><div><p class="section-kicker">Vamos conversar?</p><h2>Transformando dados em valor.</h2><p>Aberto a conexões, ideias e oportunidades em Engenharia de Dados.</p></div><a class="button button-primary" href="mailto:{{ perfil.email }}">Enviar e-mail <span aria-hidden="true">↗</span></a></section>
+    <footer class="portfolio-footer"><a class="monogram" href="#inicio">{{ perfil.iniciais|default('CV') }}<span>.</span></a><p>{{ perfil.email }} · {{ perfil.localizacao }}</p><p>© 2026 {{ perfil.nome_curto|default(perfil.nome) }}</p></footer>
   </div>
 </main>
 {% endblock %}
