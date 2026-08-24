@@ -1,0 +1,1 @@
+{% extends "base.html" %}{% block title %}Erro interno{% endblock %}{% block content %}<main class="error-page"><p class="error-code">500</p><h1>Algo deu errado</h1><p>Não foi possível concluir a solicitação.</p><a href="{{ url_for('main.home') }}">Voltar ao início</a></main>{% endblock %}
